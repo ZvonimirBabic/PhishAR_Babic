@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">PhishAR Babić</string>
+    <string name="permissions_required">Permissions required to use the application!</string>
+    <string name="rationaleTitle">Permissions required</string>
+    <string name="rationaleText">"Camera is required for this application to work ! "</string>
+    <string name="cancel">Cancel</string>
+    <string name="allow">Allow</string>
 </resources>
