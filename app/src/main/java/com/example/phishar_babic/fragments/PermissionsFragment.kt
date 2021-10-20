@@ -28,21 +28,22 @@ class PermissionsFragment : Fragment(R.layout.fragment_permissions) {
             }
         }
 
-    private val rationaleDialog = AlertDialog.Builder(requireContext())
-        .setTitle(R.string.rationaleTitle)
-        .setMessage(R.string.rationaleText)
-        .setPositiveButton(R.string.allow) { dialog, which ->
-            requestPermission.launch(
-                Manifest.permission.CAMERA
-            )
-        }
-        .setNegativeButton(R.string.cancel) { dialog, which ->
-            dialog.cancel()
-            requireActivity().finish()
-        }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        // Permission Rationale dialog
+        val rationaleDialog = AlertDialog.Builder(requireContext())
+            .setTitle(R.string.rationaleTitle)
+            .setMessage(R.string.rationaleText)
+            .setPositiveButton(R.string.allow) { dialog, which ->
+                requestPermission.launch(
+                    Manifest.permission.CAMERA
+                )
+            }
+            .setNegativeButton(R.string.cancel) { dialog, which ->
+                dialog.cancel()
+                requireActivity().finish()
+            }
 
         when {
             ContextCompat.checkSelfPermission(
